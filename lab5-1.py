@@ -1,44 +1,56 @@
 '''
-############
-Do Now 5.01
-############
+###########
+Lab 5.01
+###########
 
-In your Console
+Instructions
+------------
+Write a program that uses a dictionary to offer users the meanings of common internet abbreviations.
+The program, dictionary_lab.py, prompts the user to enter an internet abbreviation they would like explained. 
+If the requested abbreviation is in the program's dictionary (use the in keyword with an if statement 
+to test this), then it prints out the definition. If the abbreviation is not in the dictionary, the program 
+prints an apologetic message saying that it could not find a definition.
+
+Example Output:
 ---------------
-Type the following code:
+>>> python3 dictionary_lab.py
 
-my_dictionary = {
-'cat': 'a domestic feline',
-'dog': 'a domestic canine',
-'chair': 'furniture piece for sitting',
-'car': 'automobile'}
-print(my_dictionary)
-print(my_dictionary['dog'])
-print(my_dictionary.get('dog'))
-print('cat' in my_dictionary)
-print('monkey' in my_dictionary)
+What word would you like to look up? nbd
+nbd: a phrase meaning no big deal
 
-In your Notebook
-----------------
-Respond to the following:
+What word would you like to look up? kittens
+Sorry, kittens is not defined
 
-Write down what was printed out. What type is my_dictionary?
+What would would you like to look up?
 
-Add a line of code that will print the definition of 'chair', then run the code again.
-
-Write down what happens if you use my_dictionary['kittens']? What do you think that error means?
-it gives you an error and means that it is not apart of my_dictionary
+Bonus
+------
+Extend the program with any of these features:
+The user can
+update the definitions (values) for existing abbreviations in the dictionary
+add new abbreviations (keys) and provide their definitions (values).
+delete entries (key, value pairs) from the dictionary.
+get the entire dictionary printed to the screen.
+Lesson 6.01 did not cover all the techniques for manipulating dictionaries that you will need to program these features. Search for the necessary information in the [Python tutorial about dictionaries][1] and the [advanced Python documentation about dictionaries][2].
 '''
 
+user_input = input("Enter a common internet abbreviations and we'll let you know what they mean! ")
+
 my_dictionary = {
-'cat': 'a domestic feline',
-'dog': 'a domestic canine',
-'chair': 'furniture piece for sitting',
-'car': 'automobile'}
+'lol': 'laughing out loud',
+'omg': 'Oh my God',
+'btw': 'By the way',
+'asap': 'As soon as possible',
+'gtg': 'got to go',
+'imo': 'In my opinion',
+'fr': 'For real',
+'ttyl': 'Talk to you later',
+'ong': 'On God'}
+
+
+if user_input in my_dictionary:
+    print(my_dictionary[user_input])
+else:
+    print("Sorry, we dont know this one! Try another")
+
 print(my_dictionary)
-print(my_dictionary['dog'])
-print(my_dictionary.get('dog'))
-print(my_dictionary['chair'])
-print('cat' in my_dictionary)
-print('monkey' in my_dictionary)
-my_dictionary['kittens']
