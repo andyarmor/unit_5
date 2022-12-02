@@ -48,13 +48,16 @@ example_paragraph_lower_no_punctuation = example_paragraph_lower.replace(".", ""
 #convert paragraph into a list of individual strings
 example_word_list = example_paragraph_lower_no_punctuation.split(" ")
 '''
-example_paragraph = "it was a beautiful day in new york city. Our hero ariana grande was on a walk from the standard to duane reade. ariane grande was walking rather quickly because she had lived in new york for a few months. all of a sudden a slimy donut appeared out of nowhere. ariana grande decided to prance foolishly instead of dealing with the situation. Thrown off of from duane reade ariana grande decides to go to times square instead. what a beautiful day in new york."
+how_many = 0 
+example_paragraph = "cats it was a beautiful day in new york city. Our hero ariana grande was on a walk from the standard to duane reade. ariane grande was walking rather quickly because she had lived in new york for a few months. all of a sudden a slimy donut appeared out of nowhere. ariana grande decided to prance foolishly instead of dealing with the situation. Thrown off of from duane reade ariana grande decides to go to times square instead. what a beautiful day in new york."
 example_paragraph_lower = example_paragraph.lower()
 example_paragraph_lower_no_punctuation = example_paragraph_lower.replace(".", "")
 example_word_list = example_paragraph_lower_no_punctuation.split(" ")
 print(example_paragraph)
 user_input = input("What word are you curious about? ")
-my_dictionary = {'cats': 'cats appears # times',
+for word in example_paragraph:
+    how_many+=1 
+my_dictionary = {"cats": (f'cats appears {how_many} times'),
 
 }
 
