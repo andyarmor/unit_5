@@ -105,16 +105,6 @@ while running:
 
 
 
-# print()
-# user_input = input("What word are you curious about? ")
-# my_dictionary = {"cats": ('cats appears  times'),
 
-
-# }
-
-# if user_input in my_dictionary and example_paragraph:
-#     print(my_dictionary[user_input])
-# else:
-#     print(f"{user_input} does not occur")
 
 
