@@ -49,22 +49,72 @@ example_paragraph_lower_no_punctuation = example_paragraph_lower.replace(".", ""
 example_word_list = example_paragraph_lower_no_punctuation.split(" ")
 '''
 how_many = 0 
-example_paragraph = "cats it was a beautiful day in new york city. Our hero ariana grande was on a walk from the standard to duane reade. ariane grande was walking rather quickly because she had lived in new york for a few months. all of a sudden a slimy donut appeared out of nowhere. ariana grande decided to prance foolishly instead of dealing with the situation. Thrown off of from duane reade ariana grande decides to go to times square instead. what a beautiful day in new york."
+example_paragraph = '''it was a beautiful day in new york city. Our hero ariana grande was on a walk from the standard to duane reade.
+ariane grande was walking rather quickly because she had lived in new york for a few months. 
+all of a sudden a slimy donut appeared out of nowhere. 
+ariana grande decided to prance foolishly instead of dealing with the situation. 
+Thrown off of from duane reade ariana grande decides to go to times square instead. 
+what a beautiful day in new york.'''
+
+#make all lower case
 example_paragraph_lower = example_paragraph.lower()
+
+#remove all periods
 example_paragraph_lower_no_punctuation = example_paragraph_lower.replace(".", "")
+
+#remove n/ character
+example_paragraph_lower_no_punctuation = example_paragraph_lower_no_punctuation.replace("/n", "")
+
 example_word_list = example_paragraph_lower_no_punctuation.split(" ")
 print(example_paragraph)
-user_input = input("What word are you curious about? ")
-for word in example_paragraph:
-    how_many+=1 
-my_dictionary = {"cats": (f'cats appears {how_many} times'),
+print()
 
-}
 
-if user_input in my_dictionary and example_paragraph:
-    print(my_dictionary[user_input])
-else:
-    print(f"{user_input} does not occur")
+# add each word from the example_word_list to a dictionary as a key and count how many times it occures
 
+word_dictionary = {}
+for word in example_word_list:
+    if word in word_dictionary:
+        word_dictionary[word] +=1
+    else:
+        word_dictionary[word] = 1
+    
+
+#main program loop
+running = True
+while running:
+    user_input = input("What word are you curious about? ")
+
+    #if word is in the dictionary, say how many times, otherwise "doesnt" occur
+
+    if user_input in word_dictionary:
+        print(f"{user_input} occurs {word_dictionary[user_input]} times")
+    else:
+        print(f"{user_input} doesn't occur at all?")
+
+    while True:
+        user_input = input("Are you curious about any other words? (y/n) ")
+        if user_input == 'y':
+            break
+        elif user_input == 'n':
+            print("Bye!")
+            running = False
+            break
+        else:
+            print("I didn't understand you!")
+
+
+
+# print()
+# user_input = input("What word are you curious about? ")
+# my_dictionary = {"cats": ('cats appears  times'),
+
+
+# }
+
+# if user_input in my_dictionary and example_paragraph:
+#     print(my_dictionary[user_input])
+# else:
+#     print(f"{user_input} does not occur")
 
 
