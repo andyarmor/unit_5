@@ -47,34 +47,31 @@ doesn't exist in the to-do lists of any of the days before adding.
 
 running = True
 
-to_do_dictionary = {
-'sunday': '', 
-'monday': '',
-'tuesday': '',
-'wednesday': '',
-'thursday': '',
-'friday': '',
-'saturday': '',
-}
+to_do_dictionary = {}
 while running:
     user_input = input("What would you like to do? ('add' or 'get') ")
 
     if user_input == 'add':
         day_of_week = input("What day of the week? ")
-        new_item = input(f"What would you like to add to {day_of_week}? ")
+        add_item = input(f"What would you like to add to {day_of_week}? ")
+        if day_of_week in to_do_dictionary:
+            to_do_dictionary[day_of_week].append(add_item)
+        else:
+            to_do_dictionary[day_of_week] = [add_item]
+        if add_item in to_do_dictionary:
+            to_do_dictionary[day_of_week] = [add_item]
+            
 
         
     elif user_input == 'get':
         day_of_week = input("What day of the week? ")
-        print(to_do_dictionary[day_of_week])
+        if day_of_week in to_do_dictionary:
+            print(to_do_dictionary[day_of_week])
+
+        elif day_of_week not in to_do_dictionary:
+            print("You dont have anything for that day yet! YAY ")
 
 
-to_do_dictionary = {
-'Sunday': '', 
-'Monday': '',
-'Tuesday': '',
-'Wednesday': '',
-'Thursday': '',
-'Friday': '',
-'Saturday': '',
-}
+
+
+      
