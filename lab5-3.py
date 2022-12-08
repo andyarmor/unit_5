@@ -58,10 +58,12 @@ while running:
             to_do_dictionary[day_of_week].append(add_item)
         else:
             to_do_dictionary[day_of_week] = [add_item]
-        if add_item in to_do_dictionary:
-            to_do_dictionary[day_of_week] = [add_item]
+        #doesnt let you add same item twice
+        # if add_item in to_do_dictionary[day_of_week]:
+        #     to_do_dictionary[day_of_week] = [add_item]
             
-
+            
+    
         
     elif user_input == 'get':
         day_of_week = input("What day of the week? ")
